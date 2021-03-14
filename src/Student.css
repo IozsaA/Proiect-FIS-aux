@@ -1,0 +1,21 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 125px);
+    grid-template-rows: repeat(1, 125px);
+    grid-gap: 5px;
+}
+
+.student-image-container{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.student-image{
+    height: 75%;
+    width: 75%;
+}
+
+.student-text{
+    grid-row: 1;
+    grid-column: 2;
+}
