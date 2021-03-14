@@ -1,30 +1,26 @@
 import './App.css';
-import studentData from './studentData'
-import Student from './Student';
 import React from 'react';
+import Footer from './components/Footer'
+// import Barchart from './components/barchart'
+import NavigationBar from './components/NavigationBar'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router} from "react-router-dom";
+import Students from './components/Student';
+
 
 class App extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      student: studentData
-    }
-  }
-  
   render(){
-  const studentComponents = this.state.student.map(
-    student => <Student 
-                  id={student.id}
-                  img={student.img}
-                  name={student.name}
-                  phone={student.phone}
-                  email={student.email} 
-                />)
     return (
-      <div className="todo-list">
-        {studentComponents}
+      <div>
+        <React.Fragment>
+          <Router>
+            <NavigationBar />
+          </Router>
+        </React.Fragment>
+        <Students />
+        <Footer />
       </div>
-    );
+    )
   }
 }
 
